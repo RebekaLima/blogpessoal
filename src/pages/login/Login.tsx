@@ -1,4 +1,5 @@
 import './Login.css';
+import { Link } from 'react-router-dom'
 
 function Login() {
 
@@ -8,7 +9,7 @@ function Login() {
                 <form className="flex justify-center items-center flex-col w-1/2 gap-4" >
                     <h2 className="text-slate-900 text-5xl ">Entrar</h2>
                     <div className="flex flex-col w-full">
-                        <label htmlFor="usuario">Usuário</label>
+                        <label htmlFor="usuario">Usuario</label>
                         <input
                             type="text"
                             id="usuario"
@@ -39,8 +40,10 @@ function Login() {
                     <hr className="border-slate-800 w-full" />
 
                     <p>
-                        Ainda não tem uma conta?{' '}
-                        Cadastre-se
+	            Ainda não tem uma conta?{' '}
+            <Link to="/cadastro" className="text-pink-600 hover:text-pink-800">
+            Cadastre-se
+            </Link>
                     </p>
                 </form>
                 <div className="fundoLogin hidden lg:block"></div>

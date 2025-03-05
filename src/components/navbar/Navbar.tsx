@@ -12,7 +12,7 @@ function Navbar() {
                     <div className='flex gap-8'>
                         <span className='hover:text-yellow-400 cursor-pointer'>Postagens</span>
                         <span className='hover:text-yellow-400 cursor-pointer'>Temas</span>
-                        <span className='hover:text-yellow-400 cursor-pointer'>Cadastrar tema</span>
+                        <span className='hover:text-yellow-400 cursor-pointer'>Cadastrar Tema</span>
                         <span className='hover:text-yellow-400 cursor-pointer'>Perfil</span>
                         <span className='hover:text-yellow-400 cursor-pointer'>Sair</span>
                     </div>
