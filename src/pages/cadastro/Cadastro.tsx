@@ -18,7 +18,7 @@ function Cadastro() {
     nome: '',
     usuario: '',
     senha: '',
-    foto: ''
+    foto: '',
   })
   
   useEffect(() => {
@@ -51,7 +51,7 @@ function Cadastro() {
       setIsLoading(true)
 
       try{
-        await cadastrarUsuario(`usuarios/cadastrar`, usuario, setUsuario)
+        await cadastrarUsuario(`/usuarios/cadastrar`, usuario, setUsuario)
         alert('Usuário cadastrado com sucesso!')
       }catch(error){
         alert('Erro ao cadastrar o usuário!')
