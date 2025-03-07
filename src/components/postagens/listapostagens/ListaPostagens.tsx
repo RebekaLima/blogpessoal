@@ -7,11 +7,8 @@ import { buscar } from "../../../services/Service";
 import { DNA } from "react-loader-spinner";
 
 function ListaPostagens() {
-
     const navigate = useNavigate();
-
     const [postagens, setPostagens] = useState<Postagem[]>([]);
-
     const { usuario, handleLogout } = useContext(AuthContext);
     const token = usuario.token;
 
@@ -21,25 +18,24 @@ function ListaPostagens() {
                 headers: {
                     Authorization: token,
                 },
-            })
-
+            });
         } catch (error: any) {
             if (error.toString().includes('403')) {
-                handleLogout()
+                handleLogout();
             }
         }
     }
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado')
+            alert('Você precisa estar logado');
             navigate('/');
         }
-    }, [token])
+    }, [token]);
 
     useEffect(() => {
-        buscarPostagens()
-    }, [postagens.length])
+        buscarPostagens();
+    }, [postagens.length]);
 
     return (
         <>
@@ -53,11 +49,9 @@ function ListaPostagens() {
                     wrapperClass="dna-wrapper mx-auto"
                 />
             )}
-            <div className="flex justify-center w-full my-4">
+            <div className="flex justify-center w-full my-4 bg-[#d2d0f8]">
                 <div className="container flex flex-col mx-2">
-                    <div className='container mx-auto my-4 
-                        grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'
-                    >
+                    <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                         {postagens.map((postagem) => (
                             <CardPostagens key={postagem.id} postagem={postagem} />
                         ))}
